@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MySQL Veri Gösterimi</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .kisaltilmis-metin {
+      max-width: 200px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .tam-metin {
+      display: none;
+    }
+
+    .goster-buton {
+      cursor: pointer;
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Veriler</h1>
+  <table id="veri-tablosu">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Unvan</th>
+        <th>Kurum</th>
+        <th>Email</th>
+        <th>Tel Numarası</th>
+        <th>Ülke</th>
+        <th>Dil</th>
+        <th>Türkçe Başlık</th>
+        <th>İngilizce Başlık</th>
+        <th>Bildiri Özeti</th>
+        <th>İngilizce Bildiri Özeti</th>
+        <th>Anahtar Kelime</th>
+        <th>İngilizce Anahtar Kelime</th>
+      </tr>
+    </thead>
+    <tbody id="veri-tablosu-govdesi">
+      <!-- Veriler buraya eklenecek -->
+    </tbody>
+  </table>
+
+  <script>
+    // Verileri almak için Fetch API kullanma
+    fetch('/veriler')
+      .then(response => response.json())
+      .then(data => {
+        const tbody = document.getElementById('veri-tablosu-govdesi');
+        data.forEach(row => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>${row.id}</td>
+            <td>${row.ad}</td>
+            <td>${row.soyad}</td>
+            <td>${row.unvan}</td>
+            <td>${row.kurum}</td>
+            <td>${row.email}</td>
+            <td>${row.telnum}</td>
+            <td>${row.ulke}</td>
+            <td>${row.dil}</td>
+            <td>${row.baslik}</td>
+            <td>${row.ingbaslik}</td>
+            <td>
+              <div class="kisaltilmis-metin">${kisalt(row.bildiriozet, 200)}</div>
+              <div class="tam-metin">${row.bildiriozet}</div>
+              <span class="goster-buton" onclick="gosterMetin(this)">Devamı</span>
+            </td>
+            <td>
+              <div class="kisaltilmis-metin">${kisalt(row.ingbildiriozet, 200)}</div>
+              <div class="tam-metin">${row.ingbildiriozet}</div>
+              <span class="goster-buton" onclick="gosterMetin(this)">Devamı</span>
+            </td>
+            <td>${row.anahtarkelime}</td>
+            <td>${row.inganahtarkelime}</td>
+          `;
+          tbody.appendChild(tr);
+        });
+      })
+      .catch(error => console.error('Veriler alınırken bir hata oluştu: ' + error));
+
+    function gosterMetin(element) {
+      const kisaltilmisMetin = element.previousElementSibling;
+      const tamMetin = element.nextElementSibling;
+      if (kisaltilmisMetin.style.display === 'none') {
+        kisaltilmisMetin.style.display = 'inline';
+        tamMetin.style.display = 'none';
+        element.innerText = 'Devamı';
+      } else {
+        kisaltilmisMetin.style.display = 'none';
+        tamMetin.style.display = 'inline';
+        element.innerText = 'Gizle';
+      }
+    }
+
+    function kisalt(metin, maxUzunluk) {
+      if (metin.length <= maxUzunluk) {
+        return metin;
+      }
+      return metin.substring(0, maxUzunluk) + '...';
+    }
+
+    function deleteDataById(id) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('DELETE', `/api/sil?id=${id}`, true);
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        console.log('Veri başarıyla silindi.');
+        // Silinen veriyi tablodan kaldır
+        var row = document.getElementById(`veri-${id}`);
+        row.parentNode.removeChild(row);
+      } else {
+        console.error('Veri silinirken bir hata oluştu.');
+      }
+    }
+  };
+  xhr.send();
+}
+
+
+    function indir() {
+      window.location.href = '/api/indir';
+    }
+
+    
+    if (!sessionStorage.getItem("isAuthenticated")) {
+      window.location.href = "index.html"; // Giriş sayfasına yönlendir
+      alert("Bu Sayfaya Erişiminiz Yok");
+    }
+
+  </script>
+
+  <button onclick="indir()">EXCEL DOSYASI OLARAK İNDİR</button>
+  <button onclick="deleteDataById(1)">Tüm Verileri Sil (DİKKAT! BU İŞLEM GERİ ALINAMAZ!)</button>
+
+  <script src="app.js"></script>
+  
+</body>
+</html>

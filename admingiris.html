@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Girişi</title>
+</head>
+<body>
+  <h1>Admin Girişi</h1>
+  <form id="login-form">
+    <label for="username">Kullanıcı Adı:</label>
+    <input type="text" id="username" name="username" required><br>
+
+    <label for="password">Parola:</label>
+    <input type="password" id="password" name="password" required><br>
+
+    <button type="submit">Giriş Yap</button>
+  </form>
+
+  <script>
+    document.getElementById("login-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Formun otomatik olarak gönderilmesini engelle
+  
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+  
+      var correctUsername = "dorukaras";
+      var correctPassword = "123";
+  
+      if (username === correctUsername && password === correctPassword) {
+        // Giriş başarılı, oturum doğrulaması yap
+        sessionStorage.setItem("isAuthenticated", "true");
+        window.location.href = "admin.html"; // İstenilen sayfaya yönlendir
+      } else {
+        alert("Hatalı kullanıcı adı veya parola. Lütfen tekrar deneyin.");
+      }
+    });
+  
+    // Admin sayfasına erişimi kontrol et
+    
+  </script>
+  
+  
+</body>
+</html>

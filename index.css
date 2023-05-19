@@ -1,0 +1,132 @@
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 50%;
+}
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.form__field::placeholder {
+  color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+}
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #11998e;
+  font-weight: 700;
+}
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
+}
+/* demo */
+body {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.5rem;
+  background-color: #222;
+}
+
+
+
+/* CSS */
+.button-34 {
+  background: #5E5DF0;
+  border-radius: 999px;
+  box-shadow: #5E5DF0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
+
+.warning {
+  border-radius: 5px;
+  width: 220px;
+  height: 30px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #2B3246;
+  cursor:pointer;
+  box-shadow:  9px 9px 18px #262c3e,
+    -9px -9px 18px #30384e;
+  color: rgb(247, 149, 72);
+  margin: 20px;
+}
+
+.warning:hover{
+  background-color: rgba(247, 149, 73, 0.50);
+  transition:0.5s;
+}
+
+
+.rotate {
+  animation: rotate 2s linear infinite;
+}
+.danger {
+  border-radius: 5px;
+  width: 220px;
+  height: 30px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #2B3246;
+  cursor:pointer;
+  box-shadow:  9px 9px 18px #262c3e,
+    -9px -9px 18px #30384e;
+  color: rgb(255, 10, 1);
+  margin: 20px;
+}
+

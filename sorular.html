@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="index.css" />
+  <script src="app.js"></script>
+
+
+  <title>Document</title>
+</head>
+
+
+<body>
+  
+  
+  
+  <h1 style="text-align: center;color: white;">Başvuru Formu</h1>
+  <div class="form__group field">
+          <a href="#" onclick="doGTranslate('tr|en');return false;" title="English" class="gflag nturl" style="background-position:-0px -0px;"><img src="//gtranslate.net/flags/blank.png" height="32" width="32" alt="English" /></a><a href="#" onclick="doGTranslate('tr|fr');return false;" title="French" class="gflag nturl" style="background-position:-200px -100px;"><img src="//gtranslate.net/flags/blank.png" height="32" width="32" alt="French" /></a><a href="#" onclick="doGTranslate('tr|de');return false;" title="German" class="gflag nturl" style="background-position:-300px -100px;"><img src="//gtranslate.net/flags/blank.png" height="32" width="32" alt="German" /></a><a href="#" onclick="doGTranslate('tr|it');return false;" title="Italian" class="gflag nturl" style="background-position:-600px -100px;"><img src="//gtranslate.net/flags/blank.png" height="32" width="32" alt="Italian" /></a><a href="#" onclick="doGTranslate('tr|pt');return false;" title="Portuguese" class="gflag nturl" style="background-position:-300px -200px;"><img src="//gtranslate.net/flags/blank.png" height="32" width="32" alt="Portuguese" /></a><a href="#" onclick="doGTranslate('tr|ru');return false;" title="Russian" class="gflag nturl" style="background-position:-500px -200px;"><img src="//gtranslate.net/flags/blank.png" height="32" width="32" alt="Russian" /></a><a href="#" onclick="doGTranslate('tr|es');return false;" title="Spanish" class="gflag nturl" style="background-position:-600px -200px;"><img src="//gtranslate.net/flags/blank.png" height="32" width="32" alt="Spanish" /></a><a href="#" onclick="doGTranslate('tr|tr');return false;" title="Turkish" class="gflag nturl" style="background-position:-100px -500px;"><img src="//gtranslate.net/flags/blank.png" height="32" width="32" alt="Turkish" /></a>
+
+      <style type="text/css">
+        <!--
+        a.gflag {vertical-align:middle;font-size:32px;padding:1px 0;background-repeat:no-repeat;background-image:url(//gtranslate.net/flags/32.png);}
+        a.gflag img {border:0;}
+        a.gflag:hover {background-image:url(//gtranslate.net/flags/32a.png);}
+        #goog-gt-tt {display:none !important;}
+        .goog-te-banner-frame {display:none !important;}
+        .goog-te-menu-value:hover {text-decoration:none !important;}
+        body {top:0 !important;}
+        #google_translate_element2 {display:none!important;}
+      </style>
+
+      <div id="google_translate_element2"></div>
+      <script type="text/javascript">
+      function googleTranslateElementInit2() {new google.translate.TranslateElement({pageLanguage: 'tr',autoDisplay: false}, 'google_translate_element2');}
+      </script><script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"></script>
+
+
+      <script type="text/javascript">
+      /* <![CDATA[ */
+      eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('6 7(a,b){n{4(2.9){3 c=2.9("o");c.p(b,f,f);a.q(c)}g{3 c=2.r();a.s(\'t\'+b,c)}}u(e){}}6 h(a){4(a.8)a=a.8;4(a==\'\')v;3 b=a.w(\'|\')[1];3 c;3 d=2.x(\'y\');z(3 i=0;i<d.5;i++)4(d[i].A==\'B-C-D\')c=d[i];4(2.j(\'k\')==E||2.j(\'k\').l.5==0||c.5==0||c.l.5==0){F(6(){h(a)},G)}g{c.8=b;7(c,\'m\');7(c,\'m\')}}',43,43,'||document|var|if|length|function|GTranslateFireEvent|value|createEvent||||||true|else|doGTranslate||getElementById|google_translate_element2|innerHTML|change|try|HTMLEvents|initEvent|dispatchEvent|createEventObject|fireEvent|on|catch|return|split|getElementsByTagName|select|for|className|goog|te|combo|null|setTimeout|500'.split('|'),0,{}))
+      /* ]]> */
+    </script>
+    </style>
+  </div>
+
+  <div class="form__group field">
+    <input type="text" class="form__field" placeholder="Ad" name="ad" id='ad' required />
+    <label for="ad" class="form__label">Ad</label>
+  </div>
+  <br>
+  <br>
+  <div class="form__group field">
+    <input type="text" class="form__field" placeholder="Soyad" name="soyad" id='soyad' required />
+    <label for="soyad" class="form__label">Soyad</label>
+  </div>
+  <br>
+  <br>
+  <div class="form__group field">
+    <input type="text" class="form__field" placeholder="Ünvan" name="Ünvan" id='unvan' />
+    <label for="unvan" class="form__label">Lütfen unvanınızı yazınız. (Prof. Dr., Doç.,Dr. Öğr.Üyesi, Öğrenci)  </label>
+  </div>
+  <br>
+  <br>
+  <div class="form__group field">
+    <input type="text" class="form__field" placeholder="Kurum" name="kurum" id='kurum' />
+    <label for="kurum" class="form__label">Lütfen çalıştığınız kurumu belirtiniz.</label>
+  </div>
+  <br>
+  <br>
+  <div class="form__group field">
+    <input type="text" class="form__field" placeholder="email" name="email" id='email' />
+    <label for="email" class="form__label">Lütfen e-posta adresinizi yazınız.</label>
+  </div>
+  <br>
+  <br>
+  <div class="form__group field">
+    <input type="tel" class="form__field" placeholder="telnum" name="telnum" id='telnum' />
+    <label for="telnumber" class="form__label">Lütfen cep telefonu numaranızı yazınız.</label>
+  </div>
+  <br>
+  <br>
+  <div class="form__group field">
+    <input type="text" class="form__field" placeholder="Ülke" name="Ülke" id='ulke' />
+    <label for="ulke" class="form__label">Lütfen ülkenizi yazınız.</label>
+  </div>
+  <br>
+  <br>
+  <form class="form__group field" style="color: #9b9b9b;">
+    <p>Lütfen bildirinizin dilini seçiniz.</p>
+    <input type="radio" name="dil" value="Türkçe" checked>Türkçe
+    <input type="radio" name="dil" value="İngilizce">English
+    <input type="radio" name="dil" value="Русский">Русский
+</form>
+<br>
+<br>
+<div class="form__group field">
+  <input type="text" class="form__field" placeholder="Başlık" name="baslik" id='baslik' />
+  <label for="baslik" class="form__label">Lütfen bildirinizin başlığını yazınız.</label>
+</div>
+<br>
+<br>
+<div class="form__group field">
+  <input type="text" class="form__field" placeholder="İngilizce Başlık" name="ingbaslik" id='ingbaslik' />
+  <label for="ingbaslik" class="form__label">Lütfen bildirinizin başlığını İngilizce olarak yazınız.</label>
+</div>
+<br>
+<br>
+<div class="form__group field">
+  <textarea minlength = "200" type="text" class="form__field" placeholder="Bildiri Özet" name="bildiriozet" id='bildiriozet'cols="30" rows="10"></textarea>
+  <label for="bildiriozet" class="form__label">Lütfen bildirinizin özetini yazınız. (En az 200 kelime)</label>
+</div>
+<br>
+<br>
+<div class="form__group field">
+  <textarea minlength = "200" type="text" class="form__field" placeholder="İngilizce Bildiri Özet" name="ingbildiriozet" id='ingbildiriozet'cols="30" rows="10"></textarea>
+  <label for="ingbildiriozet" class="form__label">Lütfen bildirinizin özetini İngilizce olarak yazınız. (En az 200 kelime)</label>
+</div>
+<br>
+<br>
+<div class="form__group field">
+  <input minlength="5" type="text" class="form__field" placeholder="anahtarkelime" name="anahtarkelime" id='anahtarkelime' />
+  <label for="anahtarkelime" class="form__label">Lütfen 5 anahtar kelime yazınız.</label>
+</div>
+<br>
+<br>
+<div class="form__group field">
+  <input type="text" class="form__field" placeholder="inganahtarkelime" name="inganahtarkelime" id='inganahtarkelime' />
+  <label for="inganahtarkelime" class="form__label">Lütfen en çok 5 anahtar kelimeyi İngilizce olarak yazınız.</label>
+</div>
+<br>
+<br>
+
+  <button onclick="submitForm()" class="button-34" role="button">Tamamla</button>
+  <script>
+    function submitForm() {
+  var ad = document.getElementById('ad').value;
+  var soyad = document.getElementById('soyad').value;
+  var unvan = document.getElementById('unvan').value;
+  var kurum = document.getElementById('kurum').value;
+  var email = document.getElementById('email').value;
+  var telnum = document.getElementById('telnum').value;
+  var ulke = document.getElementById('ulke').value;
+  var dil = document.querySelector('input[name="dil"]:checked').value;
+  var baslik = document.getElementById('baslik').value;
+  var ingbaslik = document.getElementById('ingbaslik').value;
+  var bildiriozet = document.getElementById('bildiriozet').value;
+  var ingbildiriozet = document.getElementById('ingbildiriozet').value;
+  var anahtarkelime = document.getElementById('anahtarkelime').value;
+  var inganahtarkelime = document.getElementById('inganahtarkelime').value;
+  alert("Başvurunuz alınmıştır.");
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', '/api/kaydet', true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        console.log('Veriler başarıyla kaydedildi.');
+      } else {
+        console.error('Veriler kaydedilirken bir hata oluştu.');
+      }
+    }
+  };
+
+  var data = JSON.stringify({
+    ad: ad,
+    soyad: soyad,
+    unvan: unvan,
+    kurum: kurum,
+    email: email,
+    telnum: telnum,
+    ulke: ulke,
+    dil: dil,
+    baslik: baslik,
+    ingbaslik: ingbaslik,
+    bildiriozet: bildiriozet,
+    ingbildiriozet: ingbildiriozet,
+    anahtarkelime: anahtarkelime,
+    inganahtarkelime: inganahtarkelime
+  });
+
+  xhr.send(data);
+}
+  </script>
+  
+
+
+</body>
+</html>
